@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout/Layout';
 
+import { StopWatch } from '../service/StopWatch';
+import { ZERO_SET } from "../types/stopwatch";
+
 const Home = () => {
 
     interface Stopwatch<T> {
@@ -27,8 +30,10 @@ const Home = () => {
 
     const zero_reset: string = "00:00:00.00";
 
-    const [printTimer, setPrintTimer] = useState<string>(zero_reset);
+    const [printTimer, setPrintTimer] = useState<string>(ZERO_SET);
     const [printRapTimer, setPrintRapTimer] = useState<string[]>([]);
+
+
     const [toggle, setToggle] = useState<boolean>(false);
     const [intervalID, setIntervalID] = useState<NodeJS.Timer>();
 
@@ -86,6 +91,13 @@ const Home = () => {
         }
     }
 
+
+    const [test, setTest] = useState<string>("00:00:00.00");
+    const [test2, setTest2] = useState<string[]>([]);
+    const [test3, setTest3] = useState<any>();
+    const stopwatch = new StopWatch(test, setTest, test2, setTest2, test3, setTest3);
+
+
     return (
         <Layout>
             <div>
@@ -108,6 +120,11 @@ const Home = () => {
                         <button onClick={timerStop}>중지</button>
                     </div>
                 }
+            </div>
+            <div>
+                {test}
+                <button onClick={stopwatch.start}>start</button>
+                <button onClick={stopwatch.stop}>stop</button>
             </div>
         </Layout>
     );
