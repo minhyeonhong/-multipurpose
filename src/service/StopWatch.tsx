@@ -5,7 +5,7 @@ export class StopWatch {
     private timer: TStopwatch<number>;
     private strTimer: TStopwatch<string>;
 
-    private printTimer: string;
+    public printTimer: string;
     private setPrintTimer;
 
     private printRapTimers: string[];
@@ -15,6 +15,8 @@ export class StopWatch {
     private setIntervalID;
 
     constructor(
+        timer: TStopwatch<number>,
+        setTimer: React.Dispatch<React.SetStateAction<TStopwatch<number>>>,
         printTimer: string,
         setPrintTimer: React.Dispatch<React.SetStateAction<string>>,
         printRapTimers: string[],
@@ -69,10 +71,10 @@ export class StopWatch {
 
             this.printTimer = this.strTimer.hour + ":" + this.strTimer.min + ":" + this.strTimer.sec + ":" + this.strTimer.min_sec;
 
-            this.setPrintTimer(this.printTimer);
+            //this.setPrintTimer(this.printTimer);
         }, 10)
 
-        this.setIntervalID(this.intervalID);
+        //this.setIntervalID(this.intervalID);
 
     }
 

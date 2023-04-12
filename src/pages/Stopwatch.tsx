@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout/Layout';
@@ -95,8 +95,11 @@ const Home = () => {
     const [test, setTest] = useState<string>("00:00:00.00");
     const [test2, setTest2] = useState<string[]>([]);
     const [test3, setTest3] = useState<any>();
-    const stopwatch = new StopWatch(test, setTest, test2, setTest2, test3, setTest3);
+    const stopwatch = new StopWatch(timer, setTimer, test, setTest, test2, setTest2, test3, setTest3);
 
+    // useEffect(() => {
+    //     console.log("dd", stopwatch.printTimer);
+    // }, [stopwatch.printTimer])
 
     return (
         <Layout>
@@ -121,11 +124,11 @@ const Home = () => {
                     </div>
                 }
             </div>
-            <div>
+            {/* <div>
                 {test}
                 <button onClick={stopwatch.start}>start</button>
                 <button onClick={stopwatch.stop}>stop</button>
-            </div>
+            </div> */}
         </Layout>
     );
 };
