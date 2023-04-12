@@ -5,6 +5,7 @@ import Layout from '../components/layout/Layout';
 
 import { StopWatch } from '../service/StopWatch';
 import { ZERO_SET } from "../types/stopwatch";
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
 
@@ -27,8 +28,6 @@ const Home = () => {
         sec: "",
         min_sec: ""
     }
-
-    const zero_reset: string = "00:00:00.00";
 
     const [printTimer, setPrintTimer] = useState<string>(ZERO_SET);
     const [printRapTimer, setPrintRapTimer] = useState<string[]>([]);
@@ -70,7 +69,7 @@ const Home = () => {
     }
 
     const timerReset = () => {
-        setPrintTimer(zero_reset);
+        setPrintTimer(ZERO_SET);
         setPrintRapTimer([]);
         setTimer({
             hour: 0,
@@ -103,12 +102,15 @@ const Home = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Stop Watch</title>
+            </Helmet>
             <div>
                 <h1>{printTimer}</h1>
                 {printRapTimer.length > 0 &&
                     printRapTimer.map((rap, i) => {
                         return (
-                            <h2>{"Rap" + (++i) + ". " + rap}</h2>
+                            <h2 key={rap}>{"Rap" + (++i) + ". " + rap}</h2>
                         )
                     })
                 }
