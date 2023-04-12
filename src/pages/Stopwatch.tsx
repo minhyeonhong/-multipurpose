@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-
-import Layout from '../components/layout/Layout';
-
 import { StopWatch } from '../service/StopWatch';
 import { ZERO_SET } from "../types/stopwatch";
 import { Helmet } from 'react-helmet-async';
@@ -101,7 +98,7 @@ const Home = () => {
     // }, [stopwatch.printTimer])
 
     return (
-        <Layout>
+        <div>
             <Helmet>
                 <title>Stop Watch</title>
             </Helmet>
@@ -131,7 +128,7 @@ const Home = () => {
                 <button onClick={stopwatch.start}>start</button>
                 <button onClick={stopwatch.stop}>stop</button>
             </div> */}
-        </Layout>
+        </div>
     );
 };
 
