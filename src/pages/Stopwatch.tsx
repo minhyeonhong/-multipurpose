@@ -3,9 +3,15 @@ import styled from 'styled-components';
 import { StopWatch } from '../service/StopWatch';
 import { ZERO_SET } from "../types/stopwatch";
 import { Helmet } from 'react-helmet-async';
+import ReactGA from "react-ga";
+import { createBrowserHistory } from "history";
 
 const Home = () => {
-
+    const history = createBrowserHistory();
+    history.listen((response: any) => {
+        ReactGA.set({ page: response.location.pathname });
+        ReactGA.pageview(response.location.pathname);
+    });
     interface Stopwatch<T> {
         hour: T;
         min: T;
@@ -100,7 +106,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Stop Watch</title>
+                <title>{printTimer} Stop Watch</title>
             </Helmet>
             <div>
                 <h1>{printTimer}</h1>

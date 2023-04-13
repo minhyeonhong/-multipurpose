@@ -1,4 +1,3 @@
-import './App.css';
 import {
   Outlet,
   Navigate,
@@ -11,6 +10,11 @@ import Countdown from './pages/Countdown';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import styled from 'styled-components';
+import ReactGA from "react-ga";
+
+const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID;
+ReactGA.initialize(gaTrackingId!, { debug: true }); // react-ga 초기화 및 debug 사용
+ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
 
 const router = createBrowserRouter([
   {
