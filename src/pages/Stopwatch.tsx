@@ -111,7 +111,7 @@ const Home = () => {
                     name="description"
                     content="Stop Watch 스톱워치"
                 />
-                <meta name="keywords" content="Stop Watch, 스톱워치, rap time, 랩타임" />
+                <meta name="keywords" content="Stop Watch, 스톱워치, rap time, 랩타임, mhh스톱워치" />
             </Helmet>
             <div>
                 <h1>{printTimer}</h1>
