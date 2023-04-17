@@ -5,6 +5,7 @@ import { ZERO_SET } from "../types/stopwatch";
 import { Helmet } from 'react-helmet-async';
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
+import Button from '../components/ui/Button';
 
 const Home = () => {
     const history = createBrowserHistory();
@@ -115,23 +116,25 @@ const Home = () => {
             </Helmet>
             <div>
                 <h1>{printTimer}</h1>
+                {!toggle ?
+                    <StButtonWrap>
+                        <Button text='초기화' isOn={true} onClick={timerReset} />
+                        <Button text='시작' isOn={true} onClick={timerStart} />
+                    </StButtonWrap>
+                    :
+                    <StButtonWrap>
+                        <Button text='랩' isOn={true} onClick={timerRap} />
+                        <Button text='중지' isOn={true} onClick={timerStop} />
+                    </StButtonWrap>
+                }
+            </div>
+            <div>
                 {printRapTimer.length > 0 &&
                     printRapTimer.map((rap, i) => {
                         return (
                             <h2 key={rap}>{"Rap" + (++i) + ". " + rap}</h2>
                         )
                     })
-                }
-                {!toggle ?
-                    <div>
-                        <button onClick={timerReset}>초기화</button>
-                        <button onClick={timerStart}>시작</button>
-                    </div>
-                    :
-                    <div>
-                        <button onClick={timerRap}>랩</button>
-                        <button onClick={timerStop}>중지</button>
-                    </div>
                 }
             </div>
             {/* <div>
@@ -144,3 +147,10 @@ const Home = () => {
 };
 
 export default Home;
+
+const StButtonWrap = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+`
