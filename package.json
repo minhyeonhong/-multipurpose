@@ -30,14 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "sitemap": "babel-node ./sitemap-generator.js",
-    "predeploy": "npm run sitemap",
-    "postbuild": "react-snap"
-  },
-  "reactSnap": {
-    "include": [
-      "/index",
-      "/"
-    ]
+    "predeploy": "npm run sitemap"
   },
   "eslintConfig": {
     "extends": [
