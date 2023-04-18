@@ -106,14 +106,14 @@ const Home = () => {
 
     return (
         <div>
-            <Helmet>
+            {/* <Helmet>
                 <title>{printTimer} Stop Watch</title>
                 <meta
                     name="description"
                     content="Stop Watch 스톱워치"
                 />
                 <meta name="keywords" content="Stop Watch, 스톱워치, rap time, 랩타임, mhh스톱워치" />
-            </Helmet>
+            </Helmet> */}
             <div>
                 <h1>{printTimer}</h1>
                 {!toggle ?
