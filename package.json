@@ -18,7 +18,6 @@
     "react-router-dom": "^6.7.0",
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "5.0.1",
-    "react-snap": "^1.23.0",
     "redux": "^4.2.0",
     "styled-components": "^5.3.6",
     "typescript": "^4.9.4",
