@@ -24,8 +24,12 @@
     "web-vitals": "^2.1.4"
   },
   "reactSnap":{
-    "include":[
-        "/","/"]
+    "include" : [
+      "/"],
+    "puppeteerArgs" : [
+          "--no-sandbox",
+          "--disable-setuid-sandbox"
+      ]
    },
   "scripts": {
     "start": "react-scripts start",
