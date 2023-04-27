@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { StopWatch } from '../service/StopWatch';
 import { ZERO_SET } from "../types/stopwatch";
-//import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 import Button from '../components/ui/Button';
@@ -106,14 +106,14 @@ const Home = () => {
 
     return (
         <div>
-            {/* <Helmet>
+            <Helmet>
                 <title>{printTimer} Stop Watch</title>
                 <meta
                     name="description"
                     content="Stop Watch 스톱워치"
                 />
                 <meta name="keywords" content="Stop Watch, 스톱워치, rap time, 랩타임, mhh스톱워치" />
-            </Helmet> */}
+            </Helmet>
             <div>
                 <h1>{printTimer}</h1>
                 {!toggle ?
