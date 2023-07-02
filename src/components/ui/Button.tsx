@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 interface IButtonProps {
+    type?: "button" | "submit" | "reset";
     text: string;
     isOn?: boolean;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
-function Button({ text, onClick, isOn }: IButtonProps) {
+function Button({ type = "button", text, onClick, isOn }: IButtonProps) {
     return (
-        <StButton onClick={onClick} isOn={isOn!}>
+        <StButton type={type} onClick={onClick} isOn={isOn!}>
             {text}
         </StButton>
     );

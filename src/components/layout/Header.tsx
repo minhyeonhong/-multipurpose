@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Header = () => {
   return (
     <StHeaderWrap>
-      <div className="dropdown">
+      {/* <div className="dropdown">
         <button className="dropbtn">
           View More
         </button>
@@ -12,7 +12,7 @@ const Header = () => {
           <a href="#">write a post</a>
           <a href="#">settings</a>
         </div>
-      </div>
+      </div> */}
     </StHeaderWrap>
   );
 };
