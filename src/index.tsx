@@ -8,7 +8,7 @@ import { hydrate, render } from "react-dom";
 //   <App />
 // );
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById("root") as HTMLElement;
 if (rootElement.hasChildNodes()) {
   hydrate(<App />, rootElement);
 } else {

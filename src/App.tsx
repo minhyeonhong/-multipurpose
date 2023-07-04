@@ -11,6 +11,8 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import styled from 'styled-components';
 import ReactGA from "react-ga";
+import MultipleSearch from './pages/MultipleSearch';
+import Notepad from './pages/Notepad';
 
 const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID;
 ReactGA.initialize(gaTrackingId!, { debug: true }); // react-ga 초기화 및 debug 사용
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: '/countdown',
         element: <Countdown />,
+      },
+      {
+        path: '/multipleSearch',
+        element: <MultipleSearch />,
+      },
+      {
+        path: '/notepad',
+        element: <Notepad />,
       },
       {
         path: '*',
@@ -60,5 +70,5 @@ const StLayoutWrap = styled.div`
 `;
 
 const StLayout = styled.div`
-    min-height: 100vh;
+    height: 80vh;
 `;
