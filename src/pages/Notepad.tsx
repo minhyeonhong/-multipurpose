@@ -34,11 +34,17 @@ const Notepad = () => {
         <div>
             <Helmet>
                 <title>메모장 | Notepad</title>
-                <meta
-                    name="description"
-                    content="간편하게 이용할 수 있는 온라인 메모장"
-                />
-                <meta name="keywords" content="메모장, note, notes, notice" />
+                <meta name="description" content="간편하게 이용할 수 있는 온라인 메모장" />
+
+                <meta property="og:title" content="메모장 | Notepad" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://multipurpose-one.vercel.app/notepad" />
+                <meta property="og:description" content="간편하게 이용할 수 있는 온라인 메모장" />
+
+                <meta name="google-site-verification" content="6O3bQej9pREFwDEPUEpVynvyRSfyleX8ilrcqClo-0U" />
+                <meta name="naver-site-verification" content="Multipurpose - 스톱워치" />
+                <meta name="keywords" content="메모장, note, notepad, notice" />
+                <meta name="author" content="MHH" />
             </Helmet>
             <button onClick={addNote}>+</button>
             {

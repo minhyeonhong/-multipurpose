@@ -107,12 +107,22 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>{printTimer} Stop Watch</title>
-                <meta
-                    name="description"
-                    content="Stop Watch 스톱워치"
-                />
-                <meta name="keywords" content="Stop Watch, 스톱워치, rap time, 랩타임, mhh스톱워치" />
+                {
+                    printTimer === ZERO_SET ?
+                        <title>Stop Watch</title>
+                        :
+                        <title>{printTimer.substring(0, printTimer.length - 3)} Stop Watch</title>
+                }
+                <meta name="description" content="Multipurpose - 스톱워치, 1/1000초로 구현됨, rap time 기능" />
+                <meta property="og:title" content="Multipurpose 스톱워치" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://multipurpose-one.vercel.app" />
+                <meta property="og:description" content="Multipurpose - 스톱워치, 1/1000초로 구현됨, rap time 기능" />
+
+                <meta name="google-site-verification" content="6O3bQej9pREFwDEPUEpVynvyRSfyleX8ilrcqClo-0U" />
+                <meta name="naver-site-verification" content="Multipurpose - 스톱워치" />
+                <meta name="keywords" content="Stop Watch, 스톱워치, rap time, 랩타임, Multipurpose" />
+                <meta name="author" content="MHH" />
             </Helmet>
             <div>
                 <h1>{printTimer}</h1>
