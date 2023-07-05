@@ -33,10 +33,10 @@ const router = createBrowserRouter([
         path: '/countdown',
         element: <Countdown />,
       },
-      {
-        path: '/multipleSearch',
-        element: <MultipleSearch />,
-      },
+      // {
+      //   path: '/multipleSearch',
+      //   element: <MultipleSearch />,
+      // },
       {
         path: '/notepad',
         element: <Notepad />,
