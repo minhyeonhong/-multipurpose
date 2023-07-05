@@ -11,7 +11,7 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import styled from 'styled-components';
 import ReactGA from "react-ga";
-import MultipleSearch from './pages/MultipleSearch';
+//import MultipleSearch from './pages/MultipleSearch';
 import Notepad from './pages/Notepad';
 
 const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID;
